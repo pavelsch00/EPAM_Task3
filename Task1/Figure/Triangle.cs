@@ -5,9 +5,9 @@ using Task3.Interface;
 
 namespace Task3.Figure
 {
-    class Triangle : Figure, IPolygonFigure
+    public class Triangle : Figure, IPolygonFigure
     {
-        public Triangle(List<double> sides)
+        public Triangle(IEnumerable<double> sides)
         {
             if (sides.Count() != 3)
                 throw new ArgumentException("Wrong number of sides. 3 sides allowed.", "sides");
@@ -29,6 +29,6 @@ namespace Task3.Figure
         public override bool Equals(object obj) => obj is Triangle triangle &&
                    EqualityComparer<List<double>>.Default.Equals(Sides, triangle.Sides) && Color == triangle.Color;
 
-        public override int GetHashCode() => HashCode.Combine(Sides);
+        public override int GetHashCode() => HashCode.Combine(Sides) * HashCode.Combine(Color);
     }
 }

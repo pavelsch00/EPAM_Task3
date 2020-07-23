@@ -6,9 +6,9 @@ using Task3.Interface;
 
 namespace Task3.Figure
 {
-    class Rectangle : Figure, IPolygonFigure
+    public class Rectangle : Figure, IPolygonFigure
     {
-        public Rectangle(List<double> sides)
+        public Rectangle(IEnumerable<double> sides)
         {
             if ((sides.Count() != 2) && (sides.Count() != 4))
                 throw new ArgumentException("Wrong number of sides. 2 or 4 sides allowed.", "sides");
@@ -20,11 +20,11 @@ namespace Task3.Figure
 
         public override double GetArea() => Sides[0] * Sides[1];
 
-        public override double GetPerimeter() => (Sides[0] + Sides[1]) * 2;
+        public override double GetPerimeter() => Math.Pow((Sides[0] + Sides[1]), 2);
 
         public override bool Equals(object obj) => obj is Rectangle rectangle &&
                    EqualityComparer<List<double>>.Default.Equals(Sides, rectangle.Sides) && Color == rectangle.Color;
 
-        public override int GetHashCode() => HashCode.Combine(Sides);
+        public override int GetHashCode() => HashCode.Combine(Sides) * HashCode.Combine(Color);
     }
 }

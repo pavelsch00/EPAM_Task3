@@ -5,15 +5,12 @@ using Task3.Interface;
 
 namespace Task3.Figure
 {
-    class Square : Figure, IPolygonFigure
+    public class Square : Figure, IPolygonFigure
     {
-        public Square(List<double> sides)
+        public Square(IEnumerable<double> sides)
         {
             if ((sides.Count() != 1) && (sides.Count() != 4))
                 throw new ArgumentException("Wrong number of sides. 1 or 4 sides allowed.", "sides");
-
-            if (sides.Count() == 4 && (sides[0] != sides[1] || sides[1] != sides[2] || sides[2] != sides[3]))
-                throw new ArgumentException("Unequal sides", "sides");
 
             Sides = sides.ToList();
         }
@@ -27,6 +24,6 @@ namespace Task3.Figure
         public override bool Equals(object obj) => obj is Square square &&
                    EqualityComparer<List<double>>.Default.Equals(Sides, square.Sides) && Color == square.Color;
 
-        public override int GetHashCode() => HashCode.Combine(Sides);
+        public override int GetHashCode() => HashCode.Combine(Sides) * HashCode.Combine(Color);
     }
 }
