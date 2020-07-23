@@ -8,7 +8,7 @@ namespace Task3.Figure
 {
     class Rectangle : Figure, IPolygonFigure
     {
-        public Rectangle(IEnumerable<double> sides)
+        public Rectangle(List<double> sides)
         {
             if ((sides.Count() != 2) && (sides.Count() != 4))
                 throw new ArgumentException("Wrong number of sides. 2 or 4 sides allowed.", "sides");
