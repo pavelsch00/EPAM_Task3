@@ -6,7 +6,7 @@ using Task3.Interface;
 
 namespace Task3.Figure
 {
-    public class Circle : Figure, ICIrcle
+    public class Circle : Figure, ICircle
     {
         public Circle(double radius)
         {

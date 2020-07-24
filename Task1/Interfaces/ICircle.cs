@@ -1,6 +1,6 @@
 ﻿namespace Task3.Interface
 {
-    interface ICIrcle : IFigure
+    interface ICircle : IFigure
     {
         double Radius { get; set; }
     }

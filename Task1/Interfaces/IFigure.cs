@@ -1,6 +1,6 @@
 ﻿namespace Task3.Interface
 {
-    interface IFigure
+    public interface IFigure
     {
         double GetPerimeter();
 
