@@ -15,7 +15,7 @@ namespace Task3.Figure
             Sides = sides.ToList();
         }
 
-        public List<double> Sides { get; set; }
+        public List<double> Sides { get; }
 
         public override double GetPerimeter() => Sides[0] * 4;
 

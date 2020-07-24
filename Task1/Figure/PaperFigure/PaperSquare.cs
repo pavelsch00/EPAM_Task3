@@ -14,7 +14,11 @@ namespace Task3.Figure.PaperFigure
             IsСhangeColor = true;
         }
 
-    public void СhangeСolor(Color color)
+        public bool IsСhangeColor { get; set; }
+
+        public Color Color { get; set; }
+
+        public void СhangeСolor(Color color)
         {
             if (IsСhangeColor == false)
                 throw new ArgumentException("Color can only be changed once.", "Color");
@@ -22,10 +26,6 @@ namespace Task3.Figure.PaperFigure
             Color = color;
             IsСhangeColor = false;
         }
-
-        public bool IsСhangeColor { get; set; }
-
-        public Color Color { get; set; }
 
         public override bool Equals(object obj) => obj is PaperSquare square &&
                    EqualityComparer<List<double>>.Default.Equals(Sides, square.Sides) && Color == square.Color;

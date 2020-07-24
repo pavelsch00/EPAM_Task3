@@ -2,6 +2,6 @@
 {
     interface ICIrcle : IFigure
     {
-        double Radius { get; set; }
+        double Radius { get; }
     }
 }

@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using Task3.Enums;
 using Task3.Interface;
 
 namespace Task3.Figure.PaperFigure
 {
-    public class PaperRectangle : Rectangle, IPaper
+    public class PapperTriangle : Triangle, IPaper
     {
-        public PaperRectangle(IEnumerable<double> sides, Color color) : base(sides)
+        public PapperTriangle(IEnumerable<double> sides, Color color) : base(sides)
         {
             Color = color;
             IsСhangeColor = true;
@@ -26,11 +27,9 @@ namespace Task3.Figure.PaperFigure
             IsСhangeColor = false;
         }
 
-        public override bool Equals(object obj) => obj is PaperRectangle rectangle &&
-                   EqualityComparer<List<double>>.Default.Equals(Sides, rectangle.Sides) && Color == rectangle.Color;
+        public override bool Equals(object obj) => obj is PapperTriangle triangle &&
+                   EqualityComparer<List<double>>.Default.Equals(Sides, triangle.Sides) && Color == triangle.Color;
 
         public override int GetHashCode() => HashCode.Combine(Sides) * HashCode.Combine(Color);
-
-        public override string ToString() => $"Color: {Color}, Perimeter: {GetPerimeter()}, Area: {GetArea()}\n";
     }
 }

@@ -15,7 +15,7 @@ namespace Task3.Figure
             Sides = sides.ToList();
         }
 
-        public List<double> Sides { get; set; }
+        public List<double> Sides { get; }
 
         public override double GetPerimeter() => Sides[0] + Sides[1] + Sides[2];
 
@@ -25,10 +25,5 @@ namespace Task3.Figure
 
             return Math.Sqrt(halfPerimeter * (halfPerimeter - Sides[0]) * (halfPerimeter - Sides[1]) * (halfPerimeter - Sides[2]));
         }
-
-        public override bool Equals(object obj) => obj is Triangle triangle &&
-                   EqualityComparer<List<double>>.Default.Equals(Sides, triangle.Sides) && Color == triangle.Color;
-
-        public override int GetHashCode() => HashCode.Combine(Sides) * HashCode.Combine(Color);
     }
 }

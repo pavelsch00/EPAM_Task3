@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Task3.Interface;
 
 namespace Task3.Figure
@@ -16,7 +15,7 @@ namespace Task3.Figure
             Sides = sides.ToList();
         }
 
-        public List<double> Sides { get; set; }
+        public List<double> Sides { get; }
 
         public override double GetArea() => Sides[0] * Sides[1];
 

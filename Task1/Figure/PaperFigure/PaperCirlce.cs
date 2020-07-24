@@ -12,6 +12,10 @@ namespace Task3.Figure.PaperFigure
             IsСhangeColor = true;
         }
 
+        public bool IsСhangeColor { get; set; }
+
+        public Color Color { get; set; }
+
         public void СhangeСolor(Color color)
         {
             if (IsСhangeColor == false)
@@ -20,10 +24,6 @@ namespace Task3.Figure.PaperFigure
             Color = color;
             IsСhangeColor = false;
         }
-
-        public bool IsСhangeColor { get; set; }
-
-        public Color Color { get; set; }
 
         public override bool Equals(object obj) => obj is PaperCirlce circle &&
                    Radius == circle.Radius && Color == circle.Color;

@@ -4,6 +4,6 @@ namespace Task3.Interface
 {
     interface IPolygonFigure : IFigure
     {
-        List<double> Sides { get; set; }
+        List<double> Sides { get; }
     }
 }
