@@ -20,10 +20,5 @@ namespace Task3.Figure
         public override double GetPerimeter() => Sides[0] * 4;
 
         public override double GetArea() => Sides[0] * Sides[0];
-
-        public override bool Equals(object obj) => obj is Square square &&
-                   EqualityComparer<List<double>>.Default.Equals(Sides, square.Sides) && Color == square.Color;
-
-        public override int GetHashCode() => HashCode.Combine(Sides) * HashCode.Combine(Color);
     }
 }
