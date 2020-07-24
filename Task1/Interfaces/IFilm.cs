@@ -1,6 +1,6 @@
 ﻿namespace Task3.Interface
 {
-    interface IFilm
+    public interface IFilm
     {
     }
 }
