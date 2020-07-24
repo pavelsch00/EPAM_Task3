@@ -11,6 +11,12 @@ namespace Task3.Figure.FilmFigure
         {
         }
 
+        public FilmRectangle(FilmRectangle filmRectangle) : base(filmRectangle.Sides)
+        {
+            if (GetArea() < filmRectangle.GetArea())
+                throw new ArgumentException("Can't create a new shape with a larger area", "Area");
+        }
+
         public override bool Equals(object obj) => obj is FilmRectangle rectangle &&
                    EqualityComparer<List<double>>.Default.Equals(Sides, rectangle.Sides);
 

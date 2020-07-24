@@ -14,6 +14,12 @@ namespace Task3.Figure.PaperFigure
             IsСhangeColor = true;
         }
 
+        public PaperSquare(PaperSquare paperSquare) : base(paperSquare.Sides)
+        {
+            if (GetArea() < paperSquare.GetArea())
+                throw new ArgumentException("Can't create a new shape with a larger area", "Area");
+        }
+
         public bool IsСhangeColor { get; set; }
 
         public Color Color { get; set; }

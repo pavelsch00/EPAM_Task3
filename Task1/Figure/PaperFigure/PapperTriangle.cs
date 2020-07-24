@@ -14,6 +14,12 @@ namespace Task3.Figure.PaperFigure
             IsСhangeColor = true;
         }
 
+        public PapperTriangle(PapperTriangle papperTriangle) : base(papperTriangle.Sides)
+        {
+            if (GetArea() < papperTriangle.GetArea())
+                throw new ArgumentException("Can't create a new shape with a larger area", "Area");
+        }
+
         public bool IsСhangeColor { get; set; }
 
         public Color Color { get; set; }

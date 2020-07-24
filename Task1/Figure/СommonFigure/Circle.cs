@@ -13,7 +13,7 @@ namespace Task3.Figure
             Radius = radius;
         }
 
-        public double Radius { get; }
+        public double Radius { get; set;  }
 
         public override double GetPerimeter() => 2 * Radius * Math.PI;
 

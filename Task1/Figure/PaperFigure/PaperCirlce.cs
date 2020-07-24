@@ -12,6 +12,12 @@ namespace Task3.Figure.PaperFigure
             IsСhangeColor = true;
         }
 
+        public PaperCirlce(PaperCirlce paperCirlce) : base(paperCirlce.Radius)
+        {
+            if (Radius < paperCirlce.Radius)
+                throw new ArgumentException("Can't create a new shape with a larger radius", "Radius");
+        }
+
         public bool IsСhangeColor { get; set; }
 
         public Color Color { get; set; }
