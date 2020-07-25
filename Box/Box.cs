@@ -146,5 +146,25 @@ namespace Box
 
             return filmFigures;
         }
+
+        public IEnumerable<IFigure> SaveFiguresToXmlFileUsingStreamWriter()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<IFigure> SaveFiguresToXmlFileUsingXmlWriter()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<IFigure> GetFiguresFromXmlFileUsingStreamReader()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<IFigure> GetFiguresFromXmlFileUsingXmlReader()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

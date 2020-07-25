@@ -26,5 +26,14 @@ namespace Box.Interfaces
         public IEnumerable<IFigure> GetAllCircle();
 
         public IEnumerable<IFigure> GetAllFilmFigures();
+
+        public IEnumerable<IFigure> SaveFiguresToXmlFileUsingStreamWriter();
+
+        public IEnumerable<IFigure> SaveFiguresToXmlFileUsingXmlWriter();
+
+        public IEnumerable<IFigure> GetFiguresFromXmlFileUsingStreamReader();
+
+        public IEnumerable<IFigure> GetFiguresFromXmlFileUsingXmlReader();
+
     }
 }
