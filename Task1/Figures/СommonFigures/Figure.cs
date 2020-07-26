@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Task3.Enums;
-using Task3.Interface;
+﻿using Task3.Interface;
 
 namespace Task3.Figure
 {

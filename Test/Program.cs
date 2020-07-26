@@ -26,9 +26,9 @@ namespace Test
 
             figures[3] = new FilmTriangle(new List<double> { 9, 11, 4 });
 
-            SaveToFileUsingXmlWriter.SaveToFile(filePath, figures);
+            SaveToXmlFileUsingStreamWritercs.SaveToFile(filePath, figures);
 
-            figures = GetFromFileUsingXmlReader.GetToFile(filePath);
+            figures = GetFromXmlFileUsingStreamReader.GetToFile(filePath);
 
             for (int i = 0; i < figures.Length; i++)
             {
