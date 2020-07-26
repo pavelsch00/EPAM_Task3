@@ -13,6 +13,9 @@ namespace Box
     /// </summary>
     public class Box : IBox
     {
+        /// <summary>
+        /// The field stores information about size array.
+        /// </summary>
         private const int _figuresArraySize = 20;
 
         /// <summary>

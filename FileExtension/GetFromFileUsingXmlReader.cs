@@ -11,14 +11,31 @@ using Task3.Interface;
 
 namespace XmlFileExtension
 {
+    /// <summary>
+    /// Class reads figures from an xml file using XmlReader.
+    /// </summary>
     public class GetFromFileUsingXmlReader
     {
+        /// <summary>
+        /// The field stores information about size array.
+        /// </summary>
         private const int _sizeArray = 20;
 
+        /// <summary>
+        /// The field stores information about paper material.
+        /// </summary>
         private const string _paperMaterial = "Paper";
 
+        /// <summary>
+        /// The field stores information about circle figure.
+        /// </summary>
         private const string _circleFigure = "Circle";
 
+        /// <summary>
+        /// Method reads figures from an xml file using XmlReader.
+        /// </summary>
+        /// <param name="path">path</param>
+        /// <returns>IFigure[]</returns>
         public static IFigure[] GetFromFile(string path)
         {
             var figures = new IFigure[_sizeArray];

@@ -5,8 +5,16 @@ using Task3.Interface;
 
 namespace XmlFileExtension
 {
+    /// <summary>
+    /// Class save figures to a xml file using StreamWriter.
+    /// </summary>
     public class SaveToFileUsingStreamWriter
     {
+        /// <summary>
+        /// Method save figures to a xml file using StreamWriter.
+        /// </summary>
+        /// <param name="path">path</param>
+        /// <param name="figures">figures</param>
         public static void SaveToFile(string path, IFigure[] figures)
         {
             using var streamWriter = new StreamWriter(path);

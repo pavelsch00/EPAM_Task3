@@ -5,8 +5,16 @@ using Task3.Figure;
 
 namespace XmlFileExtension
 {
+    /// <summary>
+    /// Class save figures to a xml file using XmlWriter.
+    /// </summary>
     public class SaveToFileUsingXmlWriter
     {
+        /// <summary>
+        /// Method save figures to a xml file using XmlWriter.
+        /// </summary>
+        /// <param name="path">path</param>
+        /// <param name="figures">figures</param>
         public static void SaveToFile(string path, IFigure[] figures)
         {
             using var xmlWriter = new XmlTextWriter(path, Encoding.UTF8)
