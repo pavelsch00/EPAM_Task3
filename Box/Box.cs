@@ -8,17 +8,33 @@ using XmlFileExtension;
 
 namespace Box
 {
+    /// <summary>
+    /// Class describes a box with figures.
+    /// </summary>
     public class Box : IBox
     {
         private const int _figuresArraySize = 20;
 
+        /// <summary>
+        /// The constructor creates a box.
+        /// </summary>
         public Box()
         {
             Figures = new IFigure[_figuresArraySize];
         }
 
+        /// <summary>
+        /// The constructor creates a box using a figures.
+        /// </summary>
+        /// <param name="radius">figures</param>
+        public Box(IFigure[] figures)
+        {
+            Figures = figures;
+        }
+        /// <inheritdoc cref="IBox.Figures"/>
         public IFigure[] Figures { get; set; }
 
+        /// <inheritdoc cref="IBox.AddFigure"/>
         public void AddFigure(IFigure figure)
         {
             for (int i = 0; i < _figuresArraySize; i++)
@@ -31,6 +47,7 @@ namespace Box
             }
         }
 
+        /// <inheritdoc cref="IBox.ShowByNumber"/>
         public IFigure ShowByNumber(int index)
         {
             if(index < 0)
@@ -42,6 +59,7 @@ namespace Box
                 return Figures[index];
         }
 
+        /// <inheritdoc cref="IBox.GetByNumber"/>
         public IFigure GetByNumber(int index)
         {
             if (index < 0)
@@ -62,8 +80,10 @@ namespace Box
             return figure;
         }
 
+        /// <inheritdoc cref="IBox.ReplaceByNumber"/>
         public void ReplaceByNumber(int index, IFigure figure) => Figures[index] = figure;
 
+        /// <inheritdoc cref="IBox.FindBySample"/>
         public IFigure FindBySample(IFigure figure)
         {
             for (int i = 0; i < _figuresArraySize; i++)
@@ -78,6 +98,7 @@ namespace Box
             return null;
         }
 
+        /// <inheritdoc cref="IBox.ShowCountFigures"/>
         public int ShowCountFigures()
         {
             for (int i = 0; i < _figuresArraySize; i++)
@@ -87,6 +108,7 @@ namespace Box
             return 0;
         }
 
+        /// <inheritdoc cref="IBox.GetTotalArea"/>
         public double GetTotalArea()
         {
             double totalArea = 0;
@@ -102,6 +124,7 @@ namespace Box
             return totalArea;
         }
 
+        /// <inheritdoc cref="IBox.GetTotalPerimeter"/>
         public double GetTotalPerimeter()
         {
             double totalPerimeter = 0;
@@ -117,6 +140,7 @@ namespace Box
             return totalPerimeter;
         }
 
+        /// <inheritdoc cref="IBox.GetAllCircle"/>
         public IEnumerable<IFigure> GetAllCircle()
         {
             var circles = new List<IFigure>();
@@ -133,6 +157,7 @@ namespace Box
             return circles;
         }
 
+        /// <inheritdoc cref="IBox.GetAllFilmFigures"/>
         public IEnumerable<IFigure> GetAllFilmFigures()
         {
             var filmFigures = new List<IFigure>();
@@ -149,12 +174,16 @@ namespace Box
             return filmFigures;
         }
 
+        /// <inheritdoc cref="IBox.SaveFiguresToXmlFileUsingStreamWriter"/>
         public void SaveFiguresToXmlFileUsingStreamWriter(string path) => SaveToFileUsingStreamWriter.SaveToFile(path, Figures);
 
+        /// <inheritdoc cref="IBox.SaveFiguresToXmlFileUsingXmlWriter"/>
         public void SaveFiguresToXmlFileUsingXmlWriter(string path) => SaveToFileUsingXmlWriter.SaveToFile(path, Figures);
 
+        /// <inheritdoc cref="IBox.GetFiguresFromXmlFileUsingStreamReader"/>
         public void GetFiguresFromXmlFileUsingStreamReader(string path) => Figures = GetFromFileUsingXmlReader.GetFromFile(path);
 
+        /// <inheritdoc cref="IBox.GetFiguresFromXmlFileUsingXmlReader"/>
         public void GetFiguresFromXmlFileUsingXmlReader(string path) => Figures = GetFromFileUsingXmlReader.GetFromFile(path);
 
         /// <summary>

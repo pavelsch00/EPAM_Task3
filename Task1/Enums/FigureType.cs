@@ -1,7 +1,7 @@
 ﻿namespace Figure.Enums
 {
     /// <summary>
-    /// enum for figure type storage.
+    /// Enum for figure type storage.
     /// </summary>
     public enum FigureType
     {

@@ -1,7 +1,7 @@
 ﻿namespace Task3.Enums
 {
     /// <summary>
-    /// enum for color storage.
+    /// Enum for color storage.
     /// </summary>
     public enum Color
     {
