@@ -22,7 +22,21 @@ namespace Test
 
             figures[1] = new FilmRectangle(new List<double> { 11, 18 });
 
+            figures[2] = new PaperSquare(new List<double> { 8 }, Color.Green);
+
+            figures[3] = new FilmTriangle(new List<double> { 9, 11, 4 });
+
             SaveToFileUsingXmlWriter.SaveToFile(filePath, figures);
+
+            figures = GetFromFileUsingXmlReader.GetToFile(filePath);
+
+            for (int i = 0; i < figures.Length; i++)
+            {
+                if (figures[i] == null)
+                    break;
+
+                Console.WriteLine(figures[i].ToString());
+            }
         }
     }
 }

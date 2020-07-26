@@ -7,4 +7,11 @@
   <FilmRectangle>
     <Sides>11 18</Sides>
   </FilmRectangle>
+  <PaperSquare>
+    <Sides>8</Sides>
+    <Color>Green</Color>
+  </PaperSquare>
+  <FilmTriangle>
+    <Sides>9 11 4</Sides>
+  </FilmTriangle>
 </Figures>

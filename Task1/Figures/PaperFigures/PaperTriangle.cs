@@ -6,15 +6,15 @@ using Task3.Interface;
 
 namespace Task3.Figure.PaperFigure
 {
-    public class PapperTriangle : Triangle, IPaper
+    public class PaperTriangle : Triangle, IPaper
     {
-        public PapperTriangle(IEnumerable<double> sides, Color color) : base(sides)
+        public PaperTriangle(IEnumerable<double> sides, Color color) : base(sides)
         {
             Color = color;
             IsСhangeColor = true;
         }
 
-        public PapperTriangle(PapperTriangle papperTriangle) : base(papperTriangle.Sides)
+        public PaperTriangle(PaperTriangle papperTriangle) : base(papperTriangle.Sides)
         {
             if (GetArea() < papperTriangle.GetArea())
                 throw new ArgumentException("Can't create a new shape with a larger area", "Area");
@@ -33,7 +33,7 @@ namespace Task3.Figure.PaperFigure
             IsСhangeColor = false;
         }
 
-        public override bool Equals(object obj) => obj is PapperTriangle triangle &&
+        public override bool Equals(object obj) => obj is PaperTriangle triangle &&
                    EqualityComparer<List<double>>.Default.Equals(Sides, triangle.Sides) && Color == triangle.Color;
 
         public override int GetHashCode() => HashCode.Combine(Sides) * HashCode.Combine(Color);
