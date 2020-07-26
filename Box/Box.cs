@@ -1,6 +1,7 @@
 ﻿using Box.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Text;
 using Task3.Figure;
 using Task3.Interface;
 using XmlFileExtension;
@@ -155,5 +156,36 @@ namespace Box
         public void GetFiguresFromXmlFileUsingStreamReader(string path) => Figures = GetFromFileUsingXmlReader.GetFromFile(path);
 
         public void GetFiguresFromXmlFileUsingXmlReader(string path) => Figures = GetFromFileUsingXmlReader.GetFromFile(path);
+
+        /// <summary>
+        /// The method compares two objects for equivalence.
+        /// </summary>
+        /// <param name="obj">object</param>
+        /// <returns>True or False</returns>
+        public override bool Equals(object obj) => obj is Box box &&
+                   EqualityComparer<IFigure[]>.Default.Equals(Figures, box.Figures);
+
+        /// <summary>
+        /// The method gets the hash code of the object.
+        /// </summary>
+        /// <returns>HashCode</returns>
+        public override int GetHashCode() => HashCode.Combine(Figures);
+
+        /// <summary>
+        /// The method returns information about the object in string form.
+        /// </summary>
+        /// <returns>string</returns>
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (var item in Figures)
+            {
+                if (item == null)
+                    break;
+
+                sb.Append(item.ToString()).Append("\n");
+            }
+            return $"Figure Type: {GetType().Name} \nFigures: \n{sb}";
+        }
     }
 }
