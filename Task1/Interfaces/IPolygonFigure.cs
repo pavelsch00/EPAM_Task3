@@ -2,7 +2,7 @@
 
 namespace Task3.Interface
 {
-    interface IPolygonFigure : IFigure
+    public interface IPolygonFigure : IFigure
     {
         List<double> Sides { get; }
     }

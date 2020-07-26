@@ -3,7 +3,7 @@ using Task3.Enums;
 
 namespace Task3.Interface
 {
-    interface IPaper
+    public interface IPaper
     {
         bool IsСhangeColor { get; set; }
 
