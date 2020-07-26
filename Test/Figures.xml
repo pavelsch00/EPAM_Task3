@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Figures>
   <PaperCircle>
-	<Radius>5</Radius>
-	<Color>Red</Color>
+    <Radius>5</Radius>
+    <Color>Red</Color>
   </PaperCircle>
   <FilmRectangle>
-	<Sides>11 18</Sides>
+    <Sides>11 18</Sides>
   </FilmRectangle>
   <PaperSquare>
-	<Sides>8</Sides>
-	<Color>Green</Color>
+    <Sides>8</Sides>
+    <Color>Green</Color>
   </PaperSquare>
   <FilmTriangle>
-	<Sides>9 11 4</Sides>
+    <Sides>9 11 4</Sides>
   </FilmTriangle>
 </Figures>

@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using Task3.Enums;
-using Task3.Figure;
 using Task3.Figure.FilmFigure;
 using Task3.Figure.PaperFigure;
 using Task3.Interface;
-using XmlFileExtension.WorkWithFile;
+using XmlFileExtension;
 
 namespace Test
 {
@@ -26,7 +25,7 @@ namespace Test
 
             figures[3] = new FilmTriangle(new List<double> { 9, 11, 4 });
 
-            SaveToXmlFileUsingStreamWritercs.SaveToFile(filePath, figures);
+            SaveToFileUsingXmlWriter.SaveToFile(filePath, figures);
 
             figures = GetFromXmlFileUsingStreamReader.GetToFile(filePath);
 

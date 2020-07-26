@@ -3,7 +3,7 @@ using System.Xml;
 using Task3.Interface;
 using Task3.Figure;
 
-namespace XmlFileExtension.WorkWithFile
+namespace XmlFileExtension
 {
     public class SaveToFileUsingXmlWriter
     {

@@ -36,6 +36,6 @@ namespace Task3.Figure.PaperFigure
 
         public override int GetHashCode() => HashCode.Combine(Radius) * HashCode.Combine(Color);
 
-        public override string ToString() => $"Color: {Color}, Perimeter: {GetPerimeter()}, Area: {GetArea()}\n";
+        public override string ToString() => $"Figure Type: {GetType().Name}, Color: {Color}, Perimeter: {GetPerimeter()}, Area: {GetArea()}\n";
     }
 }

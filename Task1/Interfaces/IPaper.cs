@@ -1,5 +1,4 @@
-﻿using System;
-using Task3.Enums;
+﻿using Task3.Enums;
 
 namespace Task3.Interface
 {

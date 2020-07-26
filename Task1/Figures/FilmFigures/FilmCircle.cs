@@ -21,6 +21,6 @@ namespace Task3.Figure.FilmFigure
 
         public override int GetHashCode() => HashCode.Combine(Radius);
 
-        public override string ToString() => $"Perimeter: {GetPerimeter()}, Area: {GetArea()}\n";
+        public override string ToString() => $"Figure Type: {GetType().Name}, Perimeter: {GetPerimeter()}, Area: {GetArea()}\n";
     }
 }

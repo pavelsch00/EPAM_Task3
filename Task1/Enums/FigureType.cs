@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Figure.Enums
+﻿namespace Figure.Enums
 {
     public enum FigureType
     {
