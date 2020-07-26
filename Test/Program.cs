@@ -5,6 +5,8 @@ using Task3.Figure.FilmFigure;
 using Task3.Figure.PaperFigure;
 using Task3.Interface;
 using XmlFileExtension;
+using Box;
+using System.Linq;
 
 namespace Test
 {
@@ -13,28 +15,16 @@ namespace Test
         static void Main(string[] args)
         {
             string filePath = @"..\..\..\Figures.xml";
-
-
-            IFigure[] figures = new IFigure[20];
-
-            figures[0] = new PaperCircle(5, Color.Red);
-
-            figures[1] = new FilmRectangle(new List<double> { 11, 18 });
-
-            figures[2] = new PaperSquare(new List<double> { 8 }, Color.Green);
-
-            figures[3] = new FilmTriangle(new List<double> { 9, 11, 4 });
-
-            SaveToFileUsingXmlWriter.SaveToFile(filePath, figures);
-
-            figures = GetFromXmlFileUsingStreamReader.GetToFile(filePath);
-
-            for (int i = 0; i < figures.Length; i++)
+            Box.Box box = new Box.Box();
+            IFigure[] arr = new IFigure[20];
+            box.GetFiguresFromXmlFileUsingXmlReader(filePath);
+            for (int i = 0; i < box.Figures.Length; i++)
             {
-                if (figures[i] == null)
+                if (box.Figures[i] == null)
                     break;
+                arr = box.GetAllCircle().ToArray();
 
-                Console.WriteLine(figures[i].ToString());
+                Console.WriteLine(arr[i]);
             }
         }
     }

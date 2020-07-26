@@ -19,7 +19,7 @@ namespace XmlFileExtension
 
         private const string _circleFigure = "Circle";
 
-        public static IFigure[] GetToFile(string path)
+        public static IFigure[] GetFromFile(string path)
         {
             var figures = new IFigure[_sizeArray];
             var sides = new List<double>();

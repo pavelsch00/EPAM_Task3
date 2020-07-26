@@ -27,13 +27,13 @@ namespace Box.Interfaces
 
         public IEnumerable<IFigure> GetAllFilmFigures();
 
-        public IEnumerable<IFigure> SaveFiguresToXmlFileUsingStreamWriter();
+        public void SaveFiguresToXmlFileUsingStreamWriter(string path);
 
-        public IEnumerable<IFigure> SaveFiguresToXmlFileUsingXmlWriter();
+        public void SaveFiguresToXmlFileUsingXmlWriter(string path);
 
-        public IEnumerable<IFigure> GetFiguresFromXmlFileUsingStreamReader();
+        public void GetFiguresFromXmlFileUsingStreamReader(string path);
 
-        public IEnumerable<IFigure> GetFiguresFromXmlFileUsingXmlReader();
+        public void GetFiguresFromXmlFileUsingXmlReader(string path);
 
     }
 }

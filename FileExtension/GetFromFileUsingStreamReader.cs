@@ -11,7 +11,7 @@ using Task3.Interface;
 
 namespace XmlFileExtension
 {
-    public class GetFromXmlFileUsingStreamReader
+    public class GetFromFileUsingStreamReader
     {
         private const int _sizeArray = 20;
 
@@ -19,7 +19,7 @@ namespace XmlFileExtension
 
         private const string _circleFigure = "Circle";
 
-        public static IFigure[] GetToFile(string path)
+        public static IFigure[] GetFromFile(string path)
         {
             var figures = new IFigure[_sizeArray];
             var sides = new List<double>();

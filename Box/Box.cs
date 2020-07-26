@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using Task3.Figure;
 using Task3.Interface;
+using XmlFileExtension;
 
 namespace Box
 {
@@ -147,24 +148,12 @@ namespace Box
             return filmFigures;
         }
 
-        public IEnumerable<IFigure> SaveFiguresToXmlFileUsingStreamWriter()
-        {
-            throw new NotImplementedException();
-        }
+        public void SaveFiguresToXmlFileUsingStreamWriter(string path) => SaveToFileUsingStreamWriter.SaveToFile(path, Figures);
 
-        public IEnumerable<IFigure> SaveFiguresToXmlFileUsingXmlWriter()
-        {
-            throw new NotImplementedException();
-        }
+        public void SaveFiguresToXmlFileUsingXmlWriter(string path) => SaveToFileUsingXmlWriter.SaveToFile(path, Figures);
 
-        public IEnumerable<IFigure> GetFiguresFromXmlFileUsingStreamReader()
-        {
-            throw new NotImplementedException();
-        }
+        public void GetFiguresFromXmlFileUsingStreamReader(string path) => Figures = GetFromFileUsingXmlReader.GetFromFile(path);
 
-        public IEnumerable<IFigure> GetFiguresFromXmlFileUsingXmlReader()
-        {
-            throw new NotImplementedException();
-        }
+        public void GetFiguresFromXmlFileUsingXmlReader(string path) => Figures = GetFromFileUsingXmlReader.GetFromFile(path);
     }
 }

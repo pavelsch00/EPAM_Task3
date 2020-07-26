@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Box\Box.csproj" />
     <ProjectReference Include="..\FileExtension\XmlFileExtension.csproj" />
   </ItemGroup>
 

@@ -3,9 +3,9 @@ using System.Text;
 using Task3.Figure;
 using Task3.Interface;
 
-namespace XmlFileExtension.WorkWithFile
+namespace XmlFileExtension
 {
-    public class SaveToXmlFileUsingStreamWritercs
+    public class SaveToFileUsingStreamWriter
     {
         public static void SaveToFile(string path, IFigure[] figures)
         {
