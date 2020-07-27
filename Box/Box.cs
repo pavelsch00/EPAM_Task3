@@ -32,7 +32,15 @@ namespace Box
         /// <param name="radius">figures</param>
         public Box(IFigure[] figures)
         {
-            Figures = figures;
+            Figures = new IFigure[_figuresArraySize];
+
+            for (var i = 0; i < Figures.Length; i++)
+            {
+                if (figures[i] == null)
+                    break;
+
+                Figures[i] = figures[i];
+            }
         }
         /// <inheritdoc cref="IBox.Figures"/>
         public IFigure[] Figures { get; set; }
@@ -43,7 +51,10 @@ namespace Box
             for (int i = 0; i < _figuresArraySize; i++)
             {
                 if (Figures[i] == null)
-                    Figures[Figures.Length] = figure;
+                {
+                    Figures[i] = figure;
+                    break;
+                }
 
                 if (Figures[i].Equals(figure))
                     throw new ArgumentException("No two identical figures are allowed", "figure");
@@ -94,7 +105,7 @@ namespace Box
                 if (Figures[i] == null)
                     break;
 
-                if (Figures.Equals(figure))
+                if (Figures[i].Equals(figure))
                     return Figures[i];
             }
 
@@ -137,7 +148,7 @@ namespace Box
                 if (Figures[i] == null)
                     break;
 
-                totalPerimeter += Figures[i].GetArea();
+                totalPerimeter += Figures[i].GetPerimeter();
             }
 
             return totalPerimeter;
@@ -163,7 +174,7 @@ namespace Box
         /// <inheritdoc cref="IBox.GetAllFilmFigures"/>
         public IEnumerable<IFigure> GetAllFilmFigures()
         {
-            var filmFigures = new List<IFigure>();
+            var filmFIgure = new List<IFigure>();
 
             for (int i = 0; i < _figuresArraySize; i++)
             {
@@ -171,10 +182,10 @@ namespace Box
                     break;
 
                 if (Figures[i] is IFilm)
-                    filmFigures.Add(Figures[i]);
+                    filmFIgure.Add(Figures[i]);
             }
 
-            return filmFigures;
+            return filmFIgure;
         }
 
         /// <inheritdoc cref="IBox.SaveFiguresToXmlFileUsingStreamWriter"/>
@@ -194,8 +205,26 @@ namespace Box
         /// </summary>
         /// <param name="obj">object</param>
         /// <returns>True or False</returns>
-        public override bool Equals(object obj) => obj is Box box &&
-                   EqualityComparer<IFigure[]>.Default.Equals(Figures, box.Figures);
+        public override bool Equals(object obj)
+        {
+            {
+                if (obj.GetType() != GetType())
+                    return false;
+
+                var box = (Box)obj;
+
+                for (var i = 0; i < Figures.Length; i++)
+                {
+                    if (Figures[i] == null)
+                        break;
+
+                    if (!Figures[i].Equals(box.Figures[i]))
+                        return false;
+                }
+
+                return true;
+            }
+        }
 
         /// <summary>
         /// The method gets the hash code of the object.

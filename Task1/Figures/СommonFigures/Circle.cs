@@ -30,8 +30,18 @@ namespace Task3.Figure
         /// </summary>
         /// <param name="obj">object</param>
         /// <returns>True or False</returns>
-        public override bool Equals(object obj) => obj is Circle circle && Radius == circle.Radius;
+        public override bool Equals(object obj)
+        {
+            if (obj.GetType() != GetType())
+                return false;
 
+            Circle circle = (Circle)obj;
+
+            if (Radius != circle.Radius)
+                return false;
+
+            return true;
+        }
         /// <summary>
         /// The method gets the hash code of the object.
         /// </summary>

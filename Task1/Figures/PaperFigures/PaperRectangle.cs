@@ -52,8 +52,15 @@ namespace Task3.Figure.PaperFigure
         /// </summary>
         /// <param name="obj">object</param>
         /// <returns>True or False</returns>
-        public override bool Equals(object obj) => obj is PaperRectangle rectangle &&
-                   EqualityComparer<List<double>>.Default.Equals(Sides, rectangle.Sides) && Color == rectangle.Color;
+        public override bool Equals(object obj)
+        {
+            if (obj.GetType() != GetType())
+                return false;
+
+            PaperRectangle rectangle = (PaperRectangle)obj;
+
+            return (base.Equals(obj) && (Color == rectangle.Color));
+        }
 
         /// <summary>
         /// The method gets the hash code of the object.

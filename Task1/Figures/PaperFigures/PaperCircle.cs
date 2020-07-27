@@ -51,8 +51,15 @@ namespace Task3.Figure.PaperFigure
         /// </summary>
         /// <param name="obj">object</param>
         /// <returns>True or False</returns>
-        public override bool Equals(object obj) => obj is PaperCircle circle &&
-                   Radius == circle.Radius && Color == circle.Color;
+        public override bool Equals(object obj)
+        {
+            if (obj.GetType() != GetType())
+                return false;
+
+            PaperCircle circle = (PaperCircle)obj;
+
+            return ((Color == circle.Color) && base.Equals(obj));
+        }
 
         /// <summary>
         /// The method gets the hash code of the object.

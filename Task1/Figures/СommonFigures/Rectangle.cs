@@ -32,8 +32,19 @@ namespace Task3.Figure
         /// </summary>
         /// <param name="obj">object</param>
         /// <returns>True or False</returns>
-        public override bool Equals(object obj) => obj is Rectangle rectangle &&
-                   EqualityComparer<List<double>>.Default.Equals(Sides, rectangle.Sides);
+        public override bool Equals(object obj)
+        {
+            if (obj.GetType() != GetType())
+                return false;
+
+            Rectangle rectangle = (Rectangle)obj;
+
+            for (int i = 0; i < Sides.Count; i++)
+                if (Sides[i] != rectangle.Sides[i])
+                    return false;
+
+            return true;
+        }
 
         /// <summary>
         /// The method returns information about the object in string form.

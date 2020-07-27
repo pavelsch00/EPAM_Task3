@@ -31,8 +31,19 @@ namespace Task3.Figure
         /// </summary>
         /// <param name="obj">object</param>
         /// <returns>True or False</returns>
-        public override bool Equals(object obj) => obj is Triangle triangle &&
-                   EqualityComparer<List<double>>.Default.Equals(Sides, triangle.Sides);
+        public override bool Equals(object obj)
+        {
+            if (obj.GetType() != GetType())
+                return false;
+
+            Triangle triangle = (Triangle)obj;
+
+            for (int i = 0; i < Sides.Count; i++)
+                if (Sides[i] != triangle.Sides[i])
+                    return false;
+
+            return true;
+        }
 
         /// <summary>
         /// The method gets the hash code of the object.
@@ -40,7 +51,7 @@ namespace Task3.Figure
         /// <returns>HashCode</returns>
         public override int GetHashCode() => HashCode.Combine(Sides);
 
-        /// <summary>
+                /// <summary>
         /// The method returns information about the object in string form.
         /// </summary>
         /// <returns>string</returns>
