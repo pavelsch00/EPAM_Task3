@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Task3.Interface;
 
 namespace Task3.Figure

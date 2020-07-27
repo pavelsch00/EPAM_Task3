@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Task3.Interface;
 
 namespace Task3.Figure.FilmFigure
@@ -21,10 +22,10 @@ namespace Task3.Figure.FilmFigure
         /// Constructor to create an object from a given.
         /// </summary>
         /// <param name="filmCirle">filmCirle</param>
-        public FilmCircle(FilmCircle filmCirle) : base(filmCirle.Radius)
+        public FilmCircle(IFigure polygonFigure, List<double> sides) : base(sides[0])
         {
-            if(Radius < filmCirle.Radius)
-                throw new ArgumentException("Can't create a new shape with a larger radius.", "Radius");
+            if (GetArea() > polygonFigure.GetArea())
+                throw new ArgumentException("Can't create a new shape with a larger radius", "Radius");
         }
 
         /// <summary>

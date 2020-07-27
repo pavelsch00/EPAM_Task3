@@ -25,11 +25,14 @@ namespace Task3.Figure.PaperFigure
         /// Constructor to create an object from a given.
         /// </summary>
         /// <param name="paperRectangle">paperRectangle</param>
-        public PaperRectangle(PaperRectangle paperRectangle) : base(paperRectangle.Sides)
+        public PaperRectangle(IFigure polygonFigure, List<double> sides, Color color) : base(sides)
         {
-            if (GetArea() < paperRectangle.GetArea())
+            if (GetArea() > polygonFigure.GetArea())
                 throw new ArgumentException("Can't create a new shape with a larger area", "Area");
+
+            Color = color;
         }
+
 
         /// <inheritdoc cref="IPaper.IsСhangeColor)"/>
         public bool IsСhangeColor { get; set; }

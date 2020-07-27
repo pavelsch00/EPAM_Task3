@@ -13,4 +13,10 @@
     <PackageReference Include="coverlet.collector" Version="1.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Box\MyBox.csproj" />
+    <ProjectReference Include="..\FileExtension\XmlFileExtension.csproj" />
+    <ProjectReference Include="..\Task1\Figure.csproj" />
+  </ItemGroup>
+
 </Project>

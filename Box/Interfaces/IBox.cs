@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Task3.Interface;
 
-namespace Box.Interfaces
+namespace MyBox.Interfaces
 {
     /// <summary>
     /// The interface describes the Box class.

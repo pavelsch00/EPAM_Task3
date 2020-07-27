@@ -19,7 +19,7 @@ namespace Task3.Figure
 
         public override double GetArea() => Sides[0] * Sides[1];
 
-        public override double GetPerimeter() => Math.Pow((Sides[0] + Sides[1]), 2);
+        public override double GetPerimeter() => (Sides[0] + Sides[1]) * 2;
 
         /// <summary>
         /// The method gets the hash code of the object.

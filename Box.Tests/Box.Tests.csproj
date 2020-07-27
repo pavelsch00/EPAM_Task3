@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Box\Box.csproj" />
+    <ProjectReference Include="..\Box\MyBox.csproj" />
     <ProjectReference Include="..\FileExtension\XmlFileExtension.csproj" />
     <ProjectReference Include="..\Task1\Figure.csproj" />
   </ItemGroup>

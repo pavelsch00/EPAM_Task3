@@ -1,4 +1,4 @@
-﻿using Box.Interfaces;
+﻿using MyBox.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -6,7 +6,7 @@ using Task3.Figure;
 using Task3.Interface;
 using XmlFileExtension;
 
-namespace Box
+namespace MyBox
 {
     /// <summary>
     /// Class describes a box with figures.

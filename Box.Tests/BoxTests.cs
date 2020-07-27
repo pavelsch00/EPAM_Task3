@@ -6,7 +6,7 @@ using Task3.Figure.PaperFigure;
 using Task3.Interface;
 using Xunit;
 
-namespace Box.Tests
+namespace MyBox.Tests
 {
     public class BoxTests
     {
@@ -168,7 +168,7 @@ namespace Box.Tests
             var figures = new IFigure[20];
             figures[0] = new PaperRectangle(new List<double> { 10, 6 }, Color.Black);
             figures[1] = new PaperTriangle(new List<double> { 2, 3, 4 }, Color.Green);
-            var actual = 265;
+            var actual = 41;
             var expectedBox = new Box(figures);
 
             // act

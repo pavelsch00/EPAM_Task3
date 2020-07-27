@@ -25,10 +25,12 @@ namespace Task3.Figure.PaperFigure
         /// Constructor to create an object from a given.
         /// </summary>
         /// <param name="papperTriangle">papperTriangle</param>
-    public PaperTriangle(PaperTriangle papperTriangle) : base(papperTriangle.Sides)
+    public PaperTriangle(IFigure polygonFigure, List<double> sides, Color color) : base(sides)
         {
-            if (GetArea() < papperTriangle.GetArea())
+            if (GetArea() > polygonFigure.GetArea())
                 throw new ArgumentException("Can't create a new shape with a larger area", "Area");
+
+            Color = color;
         }
 
         /// <inheritdoc cref="IPaper.IsСhangeColor)"/>

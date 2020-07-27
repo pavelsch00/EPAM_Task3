@@ -21,10 +21,10 @@ namespace Task3.Figure.FilmFigure
         /// Constructor to create an object from a given.
         /// </summary>
         /// <param name="filmRectangle">filmRectangle</param>
-        public FilmRectangle(FilmRectangle filmRectangle) : base(filmRectangle.Sides)
+        public FilmRectangle(IFigure polygonFigure, List<double> sides) : base(sides)
         {
-            if (GetArea() < filmRectangle.GetArea())
-                throw new ArgumentException("Can't create a new shape with a larger area", "Area");
+            if (GetArea() > polygonFigure.GetArea())
+                throw new ArgumentException("Can't create a new shape with a larger radius", "Radius");
         }
 
         /// <summary>

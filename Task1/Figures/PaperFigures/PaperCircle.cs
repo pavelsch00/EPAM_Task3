@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Task3.Enums;
 using Task3.Interface;
 
@@ -24,10 +25,12 @@ namespace Task3.Figure.PaperFigure
         /// Constructor to create an object from a given.
         /// </summary>
         /// <param name="paperCirlce">paperCirlce</param>
-        public PaperCircle(PaperCircle paperCirlce) : base(paperCirlce.Radius)
+        public PaperCircle(IFigure polygonFigure, List<double> sides, Color color) : base(sides[0])
         {
-            if (Radius < paperCirlce.Radius)
+            if (GetArea() > polygonFigure.GetArea())
                 throw new ArgumentException("Can't create a new shape with a larger radius", "Radius");
+
+            Color = color;
         }
 
         /// <inheritdoc cref="IPaper.IsСhangeColor)"/>
